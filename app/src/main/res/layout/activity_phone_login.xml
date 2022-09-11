@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.classic.android.main.ui.activity.PhoneLoginActivity">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_5"
+        android:background="@color/app_cut_line" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="@string/app_name"
+        android:textColor="@color/color_FF4A4A4A"
+        android:textSize="@dimen/sp_17" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_50"
+        android:background="#fff"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/tv_login_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:gravity="center"
+            android:text="@string/phone_number"
+            android:textColor="@color/color_FF636A71"
+            android:textSize="@dimen/sp_15" />
+
+        <EditText
+            android:id="@+id/et_login_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:layout_toRightOf="@id/tv_login_phone"
+            android:background="@android:color/transparent"
+            android:hint="@string/login_hint"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textColor="@color/color_FF636A71"
+            android:textCursorDrawable="@drawable/et_cursor_shape"
+            android:textSize="@dimen/sp_15" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="#fff"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_login_phone_test_code"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:gravity="center"
+            android:text="@string/phone_test_code"
+            android:textColor="@color/color_FF636A71"
+            android:textSize="@dimen/sp_15" />
+
+        <EditText
+            android:id="@+id/et_login_phone_test_code"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:digits="0123456789"
+            android:hint="@string/phone_test_code_hint"
+            android:maxLength="4"
+            android:textColor="@color/color_FF636A71"
+            android:textCursorDrawable="@drawable/et_cursor_shape"
+            android:textSize="@dimen/sp_15" />
+
+        <Button
+            android:id="@+id/bt_login_get_test_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/color_FF8C3C"
+            android:text="@string/get_phone_test_code"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_5"
+        android:background="@color/app_cut_line" />
+
+    <Button
+        android:id="@+id/bt_phone_login"
+        style="@style/btn_style"
+        android:layout_marginTop="@dimen/dp_40"
+        android:enabled="true"
+        android:text="@string/login" />
+</LinearLayout>

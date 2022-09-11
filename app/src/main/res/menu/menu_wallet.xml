@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/i_wallet"
+        android:checked="true"
+        android:title="@string/wallet" />
+
+    <item
+        android:id="@+id/i_card_bag"
+        android:title="@string/card_bag" />
+</menu>

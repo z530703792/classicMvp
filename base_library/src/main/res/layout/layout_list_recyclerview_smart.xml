@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnablePreviewInEditMode="false">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@null"
+            android:scrollbars="none" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_emptyview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible"
+        android:gravity="center">
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout_no"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srlEnableLoadMore="false"
+            app:srlEnableOverScrollDrag="false">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingTop="@dimen/dp_20"
+                android:paddingBottom="@dimen/dp_100">
+
+                <ImageView
+                    android:id="@+id/img_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/img_blank" />
+
+                <TextView
+                    android:id="@+id/tv_err"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_25"
+                    android:text="@string/no_data"
+                    android:textSize="@dimen/sp_13"
+                    android:textColor="@color/color_FF9BA3AA"/>
+
+            </LinearLayout>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

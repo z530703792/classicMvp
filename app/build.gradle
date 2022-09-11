@@ -1,0 +1,214 @@
+apply plugin: 'com.android.application'
+
+
+
+
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('MMddhhmm')
+    return formattedDate
+}
+
+android {
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.classicmvp.android"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode project.properties['APP_CODE'].toInteger()
+        versionName APP_VERSION
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        flavorDimensions "versionCode"
+
+        multiDexEnabled true
+
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+        //abiFilters "armeabi", "armeabi-v7a", "armeabi-v8a", "x86_64", "x86"
+
+        manifestPlaceholders = [
+                GETUI_APP_ID    : "xxxxx",
+                GETUI_APP_KEY   : "xxxx",
+                GETUI_APP_SECRET: "xxxxxxx"
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //signingConfig signingConfigs.config
+        }
+
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+
+
+    signingConfigs {
+        release {
+            storeFile file(STORE_FILE_PATH)
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
+            storePassword STORE_FILE_PASSWORD
+        }
+        debug {
+            storeFile file(STORE_FILE_PATH)
+            keyAlias KEY_ALIAS
+            keyPassword KEY_PASSWORD
+            storePassword STORE_FILE_PASSWORD
+        }
+    }
+    buildTypes {
+        release {
+            //混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            //加载默认混淆配置文件 progudard-android.txt在sdk目录里面，不用管，proguard-rules.pro是我们自己配的混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.debug
+        }
+
+        pre.initWith(release)
+        pre {
+            matchingFallbacks = ['pre', 'release', 'debug', 'inspect']
+        }
+
+        inspect.initWith(debug)
+        inspect {
+            matchingFallbacks = ['inspect', 'debug', 'pre', 'release']
+        }
+
+    }
+    dexOptions {
+        javaMaxHeapSize "2g"
+    }
+
+    allprojects {
+        repositories {
+            mavenCentral()
+            maven { url "https://jitpack.io" }
+        }
+    }
+
+    //渠道
+    productFlavors {
+        _1000_Official { manifestPlaceholders = [UMENG_CHANNEL_VALUE: "_1000_Official"] }
+
+    }
+
+    productFlavors.all { flavor ->
+        flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+
+    //修改生成的apk名字及输出文件夹
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            //时间戳
+            def timeNow
+            //是否为Jenkins打包，输出路径不同
+            if ("true".equals(IS_JENKINS)) {
+                //Jenkins打包输出到服务器路径
+                timeNow = BUILD_TIME
+                //xxx-v1.0.1-xxx-release.apk
+                outputFileName = 'v' + APP_VERSION + variant.productFlavors[0].name + '_' +
+                        variant.buildType.name + "_" + timeNow + '.apk'
+            } else {
+                //本机打包输出在本机路径
+                timeNow = getDate()
+                outputFileName = 'v' + APP_VERSION + variant.productFlavors[0].name + '_' +
+                        variant.buildType.name + "_" + timeNow + '.apk'
+            }
+        }
+    }
+
+}
+
+/*MobSDK {
+    appKey "xx"
+    appSecret "xxx"
+
+    ShareSDK {
+        //平台配置信息
+        devInfo {
+
+            Wechat {
+
+                appId "xxx"
+                appSecret "xx"
+            }
+
+            QQ {
+                appId "xxx"
+                appKey "xxx"
+                shareByAppClient true
+            }
+
+            WechatMoments {
+                appId "xxx"
+                appSecret "xxx"
+            }
+
+            WechatFavorite {
+                appId "xxx"
+                appSecret "xxx"
+            }
+
+            QZone {
+                appId "xxx"
+                appKey "xxx"
+            }
+        }
+    }
+
+}*/
+
+
+
+dependencies {
+    implementation "androidx.constraintlayout:constraintlayout:2.1.0"
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.10'
+
+    api 'com.github.hotchemi:permissionsdispatcher:3.0.1'
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:3.0.1'
+  //  compile 'com.getui:sdk:2.12.1.0'
+
+    // compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+
+    implementation project(':base_library')
+    releaseImplementation project(path: ':base_library', configuration: 'release')
+    debugImplementation project(path: ':base_library', configuration: 'debug')
+    inspectImplementation project(path: ':base_library', configuration: 'inspect')
+    preImplementation project(path: ':base_library', configuration: 'pre')
+
+}

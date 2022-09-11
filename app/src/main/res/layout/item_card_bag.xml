@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.classic.base_library.widget.CustomRoundAngleImageView
+        android:id="@+id/iv_card_bag"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_94"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:background="@color/gray_bg"
+        android:scaleType="centerCrop" />
+
+</LinearLayout>

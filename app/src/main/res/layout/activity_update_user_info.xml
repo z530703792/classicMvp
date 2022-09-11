@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_bg"
+    android:orientation="vertical">
+
+    <View
+        style="@style/line_three" />
+
+    <RelativeLayout
+        android:id="@+id/rl_update_user_info"
+        style="@style/rl_setting_title">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:text="@string/update_user_info"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/line_three" />
+
+    <RelativeLayout
+        android:id="@+id/rl_update_nickname"
+        style="@style/rl_setting_title">
+
+        <TextView
+            style="@style/tv_setting_title_style"
+            android:text="@string/nickname" />
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            style="@style/tv_user_info_style"
+            android:text="Yiro"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/line_three"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_update_sex"
+        style="@style/rl_setting_title">
+
+        <TextView
+            style="@style/tv_setting_title_style"
+            android:text="@string/sex" />
+
+        <TextView
+            android:id="@+id/tv_sex"
+            style="@style/tv_user_info_style"
+            android:text="男"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/line_three" />
+
+    <RelativeLayout
+        android:id="@+id/rl_update_birth"
+        style="@style/rl_setting_title">
+
+        <TextView
+            style="@style/tv_setting_title_style"
+            android:text="@string/birth" />
+
+        <TextView
+            android:id="@+id/tv_birth"
+            style="@style/tv_user_info_style"
+            android:text="1990-12-27"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/line_three" />
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/rl_update_address"-->
+        <!--style="@style/rl_setting_title">-->
+
+        <!--<TextView-->
+            <!--style="@style/tv_setting_title_style"-->
+            <!--android:text="@string/address" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_address"-->
+            <!--style="@style/tv_user_info_style"-->
+            <!--android:text="山东省泰安市泰安区"-->
+            <!--android:textStyle="normal" />-->
+
+    <!--</RelativeLayout>-->
+
+    <View
+        style="@style/line_three" />
+
+    <RelativeLayout
+        android:id="@+id/rl_signature"
+        style="@style/rl_setting_title">
+
+        <TextView
+            style="@style/tv_setting_title_style"
+            android:text="@string/signature" />
+
+        <TextView
+            android:id="@+id/tv_signature"
+            style="@style/tv_user_info_style"
+            android:text="这个人很懒，没有签名"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/line_three" />
+
+    <Button
+        android:id="@+id/bt_save"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        android:text="@string/save" />
+</LinearLayout>

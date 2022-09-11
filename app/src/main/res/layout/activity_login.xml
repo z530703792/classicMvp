@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_5"
+        android:background="@color/app_cut_line" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/color_FF4A4A4A"
+        android:textSize="@dimen/sp_17"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_gravity="center_horizontal" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_50"
+        android:background="@color/white"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:gravity="center"
+            android:text="@string/phone_number"
+            android:textColor="@color/color_FF636A71"
+            android:textSize="@dimen/sp_15" />
+
+        <EditText
+            android:id="@+id/et_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:layout_toRightOf="@id/tv_phone"
+            android:background="@android:color/transparent"
+            android:hint="@string/login_hint"
+            android:inputType="number"
+            android:maxLength="11"
+            android:textColor="@color/color_FF636A71"
+            android:textCursorDrawable="@drawable/et_cursor_shape"
+            android:textSize="@dimen/sp_15" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_input_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="#fff">
+
+        <TextView
+            android:id="@+id/tv_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:gravity="center"
+            android:text="@string/pwd"
+            android:textColor="@color/color_FF636A71"
+            android:textSize="@dimen/sp_15" />
+
+        <EditText
+            android:id="@+id/et_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_50"
+            android:layout_toRightOf="@id/tv_pwd"
+            android:background="@android:color/transparent"
+            android:hint="@string/pwd_hint"
+            android:inputType="textPassword"
+            android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:maxLength="20"
+            android:textColor="@color/color_FF636A71"
+            android:textCursorDrawable="@drawable/et_cursor_shape"
+            android:textSize="@dimen/sp_15" />
+
+    </RelativeLayout>
+
+    <View
+        android:background="@color/app_cut_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_5"/>
+
+    <Button
+        android:id="@+id/bt_login"
+        style="@style/btn_style"
+        android:enabled="true"
+        android:layout_marginTop="@dimen/dp_40"
+        android:text="@string/login" />
+
+    <Button
+        android:id="@+id/bt_to_register_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:background="#00999999"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/main_black"
+        android:text="@string/register" />
+
+    <Button
+        android:id="@+id/bt_to_phone_login_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:background="#00999999"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/main_black"
+        android:text="@string/phone_login"/>
+
+
+</LinearLayout>

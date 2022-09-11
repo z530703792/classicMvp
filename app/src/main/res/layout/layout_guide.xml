@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/guide"/>
+
+    <Button
+        android:id="@+id/btn_guide_enter"
+        android:layout_width="@dimen/dp_170"
+        android:layout_height="@dimen/dp_43"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_72"
+        android:text="立即体验"
+        android:textColor="@color/main_color"
+        android:background="@mipmap/btn_bg"
+        android:textSize="@dimen/sp_17" />
+
+</RelativeLayout>

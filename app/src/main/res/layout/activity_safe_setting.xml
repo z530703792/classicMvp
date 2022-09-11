@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gray_bg"
+    tools:context="com.classic.android.me.ui.activity.SafeSettingActivity">
+
+    <View
+        style="@style/line_one"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="@dimen/dp_10" />
+
+    <RelativeLayout
+        android:id="@+id/rl_replace_phone"
+        style="@style/rl_setting_title">
+
+        <TextView
+            android:id="@+id/tv_phone_number"
+            style="@style/tv_setting_title_style"
+            android:text="手机号码" />
+
+        <Button
+            android:id="@+id/btn_replace_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:enabled="true"
+            android:text="更换"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_17" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_set_pay_pwd"
+        style="@style/rl_setting_title">
+
+        <TextView
+            android:id="@+id/tv_pay_pwd"
+            style="@style/tv_setting_title_style"
+            android:text="支付密码" />
+
+        <Button
+            android:id="@+id/btn_set_pay_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:enabled="true"
+            android:text="设置"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_17" />
+    </RelativeLayout>
+</LinearLayout>

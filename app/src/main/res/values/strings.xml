@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">classicMvp</string>
+
+    <string name="main_card_bag">红包池</string>
+    <string name="main_business_circle">商圈</string>
+    <string name="main_find">发现</string>
+    <string name="main_me">我的</string>
+
+    <string name="refresh">刷新</string>
+    <string name="no_record">暂无记录</string>
+
+    <string name="phone_number">手机号　</string>
+    <string name="login_hint">请输入手机号</string>
+    <string name="pwd">输入密码</string>
+    <string name="pwd_hint">请输入您的密码</string>
+    <string name="login">登录</string>
+    <string name="phone_login">手机号登陆</string>
+    <string name="login_failed">帐号或密码错误</string>
+
+    <string name="register">注册</string>
+    <string name="phone_test_code">验证码</string>
+    <string name="phone_test_code_hint">输入验证码</string>
+    <string name="get_phone_test_code">获取验证码</string>
+    <string name="pay_pwd">支付密码</string>
+    <string name="pay_pwd_hint">输入支付密码</string>
+
+    <string name="dalvik_cache">清除缓存</string>
+    <string name="current_version">当前版本</string>
+    <string name="safe_setting">安全设置</string>
+    <string name="update_user_info">完善个人资料</string>
+    <string name="replace_header">更换头像</string>
+
+    <string name="nickname">昵称</string>
+    <string name="sex">性别</string>
+    <string name="birth">出生年月</string>
+    <string name="address">地区</string>
+    <string name="signature">签名</string>
+
+    <string name="setting">设置</string>
+    <string name="service">客服</string>
+    <string name="start_vip">开通会员服务</string>
+    <string name="vip_center">会员中心</string>
+    <string name="my_comment">我的评论</string>
+    <string name="my_trend">我的动态</string>
+    <string name="first_trend">发布你的第一条动态</string>
+    <string name="my_wallet">我的钱包</string>
+
+    <string name="new_friend">新的好友</string>
+    <string name="login_out">退出登陆</string>
+    <string name="user_id">昵称</string>
+
+    <!--钱包-->
+    <string name="recharge">充值</string>
+    <string name="withdraw">提现</string>
+
+    <string name="friend">圈友</string>
+    <string name="topic">话题</string>
+    <string name="trend">动态</string>
+
+    <string name="wallet">钱包</string>
+    <string name="card_bag">卡包</string>
+    <string name="save">保存</string>
+    <string name="edit">编辑</string>
+
+</resources>

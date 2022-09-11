@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">众粉</string>
+    <string name="net_mistake">主人，断网了，请检查网络</string>
+    <string name="services_error">服务器开小差，请稍候</string>
+    <string name="custom_content_text">自定义通知栏进度:%d%%/100%%</string>
+    <string name="no_log">暂无记录</string>
+    <string name="no_data">暂无数据</string>
+
+
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="gray_bg">#f5f7fa</color>
+    <color name="main_color">#2C4567</color>
+    <color name="white">#ffffff</color>
+    <color name="app_cut_line">#f5f7fa</color>
+    <color name="alertdialog_line">#c6c6c6</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <color name="main_black">#424242</color>
+    <color name="black">#000000</color>
+
+    <color name="color_666">#666</color>
+    <color name="color_B2B4C6">#B2B4C6</color>
+    <color name="color_FF636A71">#FF636A71</color>
+    <color name="color_FF9BA3AA">#FF9BA3AA</color>
+    <color name="color_FFAEB8C1">#FFAEB8C1</color>
+    <color name="color_FF4A4A4A">#FF4A4A4A</color>
+    <color name="color_CED8E1">#CED8E1</color>
+    <color name="color_FF8C3C">#FF8C3C</color>
+    <color name="color_FFD5DDE4">#FFD5DDE4</color>
+    <color name="color_FF32363C">#FF32363C</color>
+    <color name="color_FF2661AC">#FF2661AC</color>
+    <color name="color_80FFFFFF">#80FFFFFF</color>
+    <color name="color_2C4567">#2C4567</color>
+    <color name="color_919191">#919191</color>
+    <color name="color_25476A">#25476A</color>
+    <color name="color_CBCCCC">#CBCCCC</color>
+
+
+</resources>

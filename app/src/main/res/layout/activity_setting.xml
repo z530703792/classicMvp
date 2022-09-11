@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/tv_out"
+    android:background="@color/gray_bg"
+    android:orientation="vertical">
+
+    <View
+        style="@style/line_one"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="@dimen/dp_10" />
+
+    <RelativeLayout
+        android:id="@+id/rl_update_user_info"
+        style="@style/rl_setting_title">
+
+        <TextView
+            style="@style/tv_setting_title_style"
+            android:text="@string/update_user_info" />
+
+        <TextView
+            android:id="@+id/tv_update_user_info"
+            style="@style/tv_set_style" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/line_one"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="@dimen/dp_10" />
+
+    <RelativeLayout
+        android:id="@+id/rl_safe_setting"
+        style="@style/rl_setting_title">
+
+        <TextView
+            style="@style/tv_setting_title_style"
+            android:text="@string/safe_setting" />
+
+        <TextView
+            android:id="@+id/tv_safe_setting"
+            style="@style/tv_set_style" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/line_one"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="@dimen/dp_10" />
+
+    <RelativeLayout
+        android:id="@+id/rl_dalvik_cache"
+        style="@style/rl_setting_title">
+
+        <TextView
+            style="@style/tv_setting_title_style"
+            android:text="@string/dalvik_cache" />
+
+        <TextView
+            android:id="@+id/tv_dalvik_cache"
+            style="@style/tv_set_style" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/line_one"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="@dimen/dp_10" />
+
+    <RelativeLayout
+        android:id="@+id/rl_current_version"
+        style="@style/rl_setting_title">
+
+        <TextView
+            style="@style/tv_setting_title_style"
+            android:text="@string/current_version" />
+
+        <TextView
+            android:id="@+id/tv_current_version"
+            style="@style/tv_set_style" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_app_version_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textColor="#cdcdcd"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/bt_login_out"
+        style="@style/btn_style"
+        android:enabled="true"
+        android:text="@string/login_out" />
+
+</LinearLayout>

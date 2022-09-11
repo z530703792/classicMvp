@@ -1,0 +1,9 @@
+<resources>
+
+
+    <style name="TranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:configChanges">orientation|keyboardHidden|screenSize</item>
+    </style>
+
+</resources>

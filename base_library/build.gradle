@@ -1,0 +1,140 @@
+apply plugin: 'com.android.library'
+
+
+
+android {
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode project.properties['APP_CODE'].toInteger()
+        versionName APP_VERSION
+    }
+    buildTypes {
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_API", BASE_API_RELEASE)
+            buildConfigField("String", "BASE_API_HTML", BASE_API_HTML_RELEASE)
+        }
+
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField("String", "BASE_API", BASE_API_DEBUG)
+            buildConfigField("String", "BASE_API_HTML", BASE_API_HTML_DEBUG)
+        }
+
+        pre {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_API", BASE_API_PRE)
+            buildConfigField("String", "BASE_API_HTML", BASE_API_HTML_PRE)
+            matchingFallbacks = ['pre', 'release', 'debug', 'inspect']
+        }
+
+        inspect {
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField("String", "BASE_API", BASE_API_TEST)
+            buildConfigField("String", "BASE_API_HTML", BASE_API_HTML_TEST)
+            matchingFallbacks = [ 'inspect', 'debug', 'pre', 'release']
+
+        }
+
+
+    }
+
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+configurations {
+    release
+    debug
+    inspect
+    pre
+}
+
+dependencies {
+    api 'androidx.appcompat:appcompat:1.0.0'
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+    api 'com.google.android.material:material:1.0.0'
+    //rxjava
+    api 'io.reactivex.rxjava2:rxjava:2.1.5'
+    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //network
+    api 'com.squareup.retrofit2:retrofit:2.3.0'
+    api 'com.google.code.gson:gson:2.8.2'
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api 'com.squareup.okhttp3:okhttp:3.9.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.7.0'
+    api 'com.github.bumptech.glide:glide:4.10.0'
+    api 'com.github.bumptech.glide:okhttp3-integration:4.2.0@aar'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'
+    api 'com.github.bumptech.glide:glide:4.11.0'
+    api 'com.github.bumptech.glide:okhttp3-integration:4.11.0@aar'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+    //di
+    api 'com.google.dagger:dagger:2.10'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.10'
+    //ui
+    api 'com.xiaosu:VerticalRollingTextView:1.2.0'
+    api  'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖
+    api  'com.scwang.smart:refresh-header-material:2.0.3'    //谷歌刷新头
+    api  'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
+    api 'cn.bingoogolapple:bga-banner:2.0.9@aar'
+    api 'com.github.hackware1993:MagicIndicator:1.5.0'
+    api 'cn.bingoogolapple:bga-qrcode-zxing:1.3.6'
+    api 'cn.bingoogolapple:bga-photopicker:1.2.8@aar'
+    api 'cn.bingoogolapple:bga-baseadapter:1.2.9@aar'
+
+    api 'com.github.bumptech.glide:glide:4.11.0'
+    api 'com.github.bumptech.glide:okhttp3-integration:4.11.0@aar'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    api 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+
+    //peimission
+    api 'com.github.hotchemi:permissionsdispatcher:2.4.0'
+    compileOnly 'com.github.hotchemi:permissionsdispatcher-processor:2.4.0'
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.4.0'
+    //jsBridge
+    compile 'com.github.lzyzsd:jsbridge:1.0.4'
+    //android-gif-drawable
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.15'
+    //动画
+    compile 'com.airbnb.android:lottie:2.6.0-beta19'
+    //更新
+   // compile 'com.allenliu.versionchecklib:library:2.0.5'
+    //状态栏
+    compile 'com.jaeger.statusbarutil:library:1.5.1'
+    //滑动
+    compile 'com.github.anzewei:parallaxbacklayout:1.1.9'
+    //导航栏
+    compile 'com.github.ittianyu:BottomNavigationViewEx:2.0.2'
+    compile 'q.rorbin:badgeview:1.1.0'
+    //RecyclerView侧滑
+    compile 'com.yanzhenjie:recyclerview-swipe:1.2.0'
+
+    compile 'com.contrarywind:Android-PickerView:4.1.6'
+
+    api 'androidx.multidex:multidex:2.0.0'
+
+}
